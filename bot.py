@@ -1,14 +1,17 @@
-import os
 from telegram.ext import Updater, CommandHandler
 
-TOKEN = os.getenv('7852494996:AAGxQpNUj8ckm94GKBFYb0BjLnGOcpJQCjU')
+# Reemplaza 'TU_TOKEN' con el token que te dio BotFather
+TOKEN = '7852494996:AAGxQpNUj8ckm94GKBFYb0BjLnGOcpJQCjU'
 
 def start(update, context):
-    update.message.reply_text('¡Hola! Soy tu bot de prueba.')
+    update.message.reply_text('¡Hola! Soy tu bot de Telegram.')
 
-updater = Updater(token=TOKEN, use_context=True)
-dispatcher = updater.dispatcher
-dispatcher.add_handler(CommandHandler('start', start))
+def main():
+    updater = Updater(TOKEN, use_context=True)
+    dp = updater.dispatcher
+    dp.add_handler(CommandHandler("start", start))
+    updater.start_polling()
+    updater.idle()
 
-updater.start_polling()
-print("El bot está en línea.")
+if __name__ == '__main__':
+    main()
