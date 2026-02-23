@@ -71,7 +71,7 @@ def stats(update: Update, context: CallbackContext):
         update.message.reply_text("No tienes referidos todavía.")
 
 def main():
-    updater = Updater(TOKEN, use_context=True)
+    updater = Updater(7852494996:AAGxQpNUj8ckm94GKBFYb0BjLnGOcpJQCjU, use_context=True)
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", handle_start_param))
